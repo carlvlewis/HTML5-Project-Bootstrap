@@ -1,0 +1,136 @@
+/* --------------------------------------------------------------------- */
+/* BASE STYLES */
+
+/*- Paul Irish's Bulletproof @font-face syntax[1] */
+
+/*
+@font-face													{
+  font-family: 'Graublau Web';
+  src: url('GraublauWeb.eot');
+  src: local('☺'),
+         url('GraublauWeb.woff') format('woff'), url('GraublauWeb.ttf') format('truetype');
+}
+*/
+
+/* #444 looks better than black [2] */ 
+body, 
+select, 
+input, 
+textarea													{ color:#444; }
+
+/* Optimize legibility [3] */ 
+h1,h2,h3,h4,h5,h6											{ font-weight: bold; text-rendering: optimizeLegibility; }
+
+/* Optimize font-smoothing [4] */
+html														{ -webkit-font-smoothing: antialiased; }
+
+/* Accessible focus treatment [5] */
+a:active													{ outline: none; }
+a:focus														{ outline: thin dotted; }
+
+a, a:active, a:visited										{ color:#607890; }
+a:hover														{ color:#036; }
+
+ul															{ margin-left:30px; }
+ol															{ margin-left:30px; list-style-type: decimal; list-style-position: inside; }
+
+small														{ font-size:85%; }
+strong, th													{ font-weight: bold; }
+
+td, td img													{ vertical-align:top; } 
+
+sub															{ vertical-align: sub; font-size: smaller; }
+sup															{ vertical-align: super; font-size: smaller; }
+
+/* Normalize monospace sizing [6]  */
+code, pre 													{ font-family: "Courier New", monospace, serif; font-size: 1em; padding: 15px;  }
+
+/* Fix text-wrapping for code blocks [7]  */
+pre															{ white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
+
+/* Align checkboxes, radios, text inputs with their label [8]  */
+input[type="radio"]											{ vertical-align: text-bottom; }
+input[type="checkbox"]										{ vertical-align: bottom; *vertical-align: baseline; }
+.ie6 input													{ vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button		{ cursor: pointer; }
+
+/* Text highlight color [9] */
+::-moz-selection											{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection													{ background:#FF5E99; color:#fff; text-shadow: none; } 
+
+/* Tap color [10] */
+a:link														{ -webkit-tap-highlight-color: #FF5E99; } 
+
+/* Always force a scrollbar in non-IE */
+html														{ overflow-y: scroll; }
+
+/* Make buttons play nice in IE: [11] */
+button														{ width: auto; overflow: visible; }
+
+
+/* --------------------------------------------------------------------- */
+/* NON-SEMANTIC HELPER CLASSES */
+
+/* For image replacement */
+.ir															{ display:block; text-indent:-999px; overflow:hidden; background-repeat: none; }
+
+/* Hide for both screenreaders and browsers [12] */
+.hidden														{ display:none; visibility:hidden; } 
+
+/* Hide only visually, but make available for screenreaders [13][14] */
+.visuallyhidden												{ position:absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible													{ visibility: hidden; }
+
+/* The Magnificent Clearfix*/
+.clearfix:after												{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix													{ display: inline-block; }
+* html .clearfix											{ height: 1%; } /* Hides from IE-mac \*/
+.clearfix													{ display: block; }
+
+
+/* --------------------------------------------------------------------- */
+/* LAYOUT */
+
+body														{ margin: 0 auto; position: relative; padding: 0; width:1000px; }
+abbr														{ cursor: help; }
+
+
+/* --------------------------------------------------------------------- */
+/* TYPOGRAPHY */
+
+body														{ font: normal 16px/22px 'Graublau Web', Helvetica, Arial, Verdana, sans-serif; }
+
+
+/* --------------------------------------------------------------------- */
+/* COLORS, BACKGROUNDS, EFFECTS */
+
+html													   	{ background-color: #F6F6F6; }
+body														{ background-color: #FFF; color: #000; }
+
+
+/* --------------------------------------------------------------------- */
+/* SOURCES */ 
+/*
+
+[01] http://mky.be/font-face/bulletproof/
+[02] http://twitter.com/H_FJ/statuses/11800719859
+[03] http://www.aestheticallyloyal.com/public/optimize-legibility/ 
+[04] http://maxvoltar.com/archive/-webkit-font-smoothing
+[05] http://people.opera.com/patrickl/experiments/keyboard/test
+[06] http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+[07] http://www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
+[08] http://tjkdesign.com/ez-css/css/base.css
+[09] http://twitter.com/miketaylr/status/12228805301
+[10] http://j.mp/webkit-tap-highlight-color
+[11] http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ 
+[12] http://css-discuss.incutio.com/wiki/Screenreader_Visibility 
+[13] http://www.webaim.org/techniques/css/invisiblecontent/
+[14] http://j.mp/visuallyhidden - Thanks Jonathan Neal! 
+
+
+
+
